@@ -8,14 +8,11 @@ class Raindrop:
         self.radius = 3 
 
     def update(self):
-        """Called every frame to move the raindrop downwards."""
         self.pos += self.velocity
 
     def draw(self, surface):
-        """Draws a small, pale blue circle for the raindrop."""
-        rain_color = (125, 249, 255)
+        rain_color = (111, 143, 175)
         pygame.draw.circle(surface, rain_color, (int(self.pos.x), int(self.pos.y)), self.radius)
         
     def is_off_screen(self):
-        """Checks if the raindrop fell past the bottom of the window."""
         return self.pos.y > window_height
